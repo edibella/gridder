@@ -1,0 +1,22 @@
+{
+  "name": "gridder",
+  "version": "0.0.0",
+  "description": "Matlab package for 'gridding' non-Cartesian MRI k-space data",
+  "scripts": {
+    "postinstall": "node scripts/rename.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edibella/gridder.git"
+  },
+  "keywords": ["matlab", "package", "fourier", "transform", "tools"],
+  "author": "KC Erb <iamkcerb@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/edibella/gridder/issues"
+  },
+  "homepage": "https://github.com/edibella/gridder#readme",
+  "dependencies": {
+    "matlab-spec": "^1.1.0"
+  }
+}
