@@ -1,7 +1,7 @@
 function KSpaceData = use_nufft(KSpaceData, densityCompensation)
   % Check KSpaceData struct
   requiredFields = { 'kSpace', 'trajectory', 'cartesianSize' };
-  PackageManagement.verify_struct(KSpaceData, requiredFields, 'KSpaceData');
+  Gridder.verify_struct(KSpaceData, requiredFields, 'KSpaceData');
 
   % Get imSize
   imSize = [KSpaceData.cartesianSize(1), KSpaceData.cartesianSize(2)];

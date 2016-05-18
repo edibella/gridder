@@ -1,7 +1,7 @@
 function KSpaceData = use_grog(KSpaceData, Gx, Gy)
   % Check KSpaceData struct
   requiredFields = { 'kSpace', 'trajectory', 'cartesianSize' };
-  PackageManagement.verify_struct(KSpaceData, requiredFields, 'KSpaceData');
+  Gridder.verify_struct(KSpaceData, requiredFields, 'KSpaceData');
 
   % Permute time to end of 4D data for convenience
   if ndims(KSpaceData.kSpace) == 4
