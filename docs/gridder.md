@@ -1,17 +1,17 @@
 # Gridder
 
 
-This package provides some "pre-interpolation" methods for mapping data with a known non-Cartesian trajectory to nearby Cartesian points.
+This package provides some pre-reconstruction interpolation methods for mapping data with a known non-Cartesian trajectory to nearby Cartesian points. This process is often called "gridding".
 
 The four methods currently supported are
 
-* **NUFFT** - This method uses the FftTools package to get a Cartesian image with NUFFT and then a simple fft2c to get back Cartesian k-space.
+* **use_nufft** - This method uses the FftTools package to get a Cartesian image with NUFFT and then a simple fft2c to get back Cartesian k-space.
 
-* **griddata** - This method just uses MATLAB's default `griddata` function internally.
+* **use_griddata** - This method just uses MATLAB's default `griddata` function internally.
 
-* **GROG** - This method accepts a Gx and Gy input in addition to the others and uses the GROG method to perform interpolation. There is more information about this method in the scGROG package.
+* **use_grog** - This method accepts a Gx and Gy input in addition to the others and uses the GROG method to perform interpolation. There is more information about this method in the scGROG package.
 
-* **Nearest Neighbor** - This method uses a weighted-average nearest neighbor algorithm to perform the interpolation.
+* **use_binn** - This method uses bilinear interpolation of nearest neighbor points to perform interpolation.
 
 ### Inputs
 

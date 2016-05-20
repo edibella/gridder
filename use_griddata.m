@@ -1,7 +1,7 @@
 function KSpaceData = use_griddata(KSpaceData)
   % Check KSpaceData struct
   requiredFields = { 'kSpace', 'trajectory', 'cartesianSize' };
-  Gridder.verify_struct(KSpaceData, requiredFields, 'KSpaceData');
+  verify_struct(KSpaceData, requiredFields, 'KSpaceData');
 
   % Proceed
   function_handle = @grid3_interp;

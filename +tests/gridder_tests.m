@@ -1,7 +1,7 @@
-function pre_interp_tests(tester)
+function gridder_tests(tester)
   import Gridder.*
   % Test data comes from some gated cardiac perfusion data that has been PCA'd. It has already been put into a struct with expected cartesian size.
-  load('test_pre_interp_data_4D.mat')
+  load('test_gridder_data_4D.mat')
 
   % Test Griddata
   load('griddata_result.mat')
@@ -13,7 +13,7 @@ function pre_interp_tests(tester)
 
   % Reset between tests
   clear KSpaceData
-  load('test_pre_interp_data_4D.mat')
+  load('test_gridder_data_4D.mat')
 
   % Test GROG
   load('test_gx_gy_data.mat')
@@ -26,13 +26,13 @@ function pre_interp_tests(tester)
 
   % Reset between tests
   clear KSpaceData
-  load('test_pre_interp_data_4D.mat')
+  load('test_gridder_data_4D.mat')
 
-  % Test Nearest Neighbor
-  load('nn_result.mat')
-  KSpaceData = use_nearest_neighbor(KSpaceData);
+  % Test BINN
+  load('binn_result.mat')
+  KSpaceData = use_binn(KSpaceData);
   tester.test(officialCartesianKSpace, KSpaceData.cartesianKSpace, ...
-              'NN test - kSpace')
+              'BINN test - kSpace')
   tester.test(officialKMask, KSpaceData.cartesianMask, ...
-              'NN test - kMask')
+              'BINN test - kMask')
 end

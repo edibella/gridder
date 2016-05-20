@@ -1,8 +1,6 @@
-function kSpaceOutput = nn_interp(kSpaceInput, trajectory, nRows, nCols)
-  % A function for regridding kSpace via a simple nearest neighbor approach.
-  % This approach uses a weighted average when multiple points map to the same
-  % coordinates.
-
+function kSpaceOutput = binn_interp(kSpaceInput, trajectory, nRows, nCols)
+  % A function for regridding kSpace via a mixture of bilinear interpolation and
+  %  nearest neighbor.
 
   % kSpace in should have dimensions [nReadouts, nRays]
   [nReadouts, nRays] = size(kSpaceInput);

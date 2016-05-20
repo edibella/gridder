@@ -1,7 +1,7 @@
 {
   "name": "gridder",
   "version": "0.0.0",
-  "description": "Matlab package for 'gridding' non-Cartesian MRI k-space data",
+  "description": "Matlab package for interpolating (gridding) non-Cartesian MRI k-space data",
   "scripts": {
     "postinstall": "node scripts/rename.js"
   },
@@ -9,7 +9,7 @@
     "type": "git",
     "url": "git+https://github.com/edibella/gridder.git"
   },
-  "keywords": ["matlab", "package", "fourier", "transform", "tools"],
+  "keywords": ["matlab", "package", "gridding", "MRI", "interpolation"],
   "author": "KC Erb <iamkcerb@gmail.com>",
   "license": "MIT",
   "bugs": {
