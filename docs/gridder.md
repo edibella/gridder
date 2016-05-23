@@ -15,7 +15,7 @@ The four methods currently supported are
 
 ### Inputs
 
-All methods require a struct internally called KSpaceData. This struct must have three fields
+All methods require a struct (internally called KSpaceData). This struct must have three fields
 
 * kSpace       - The non-Cartesian k-space data to be interpolated
 
@@ -38,7 +38,7 @@ Additionally the `use_nufft` and `use_grog` functions have extra inputs for thei
 
 ### Output
 
-The functions return KSpaceData with some new fields
+The functions return the original struct with some new fields
 
 * **cartesianKSpace** - The cartesian k-space created by interpolation. This k-space has max intensity at the center of the matrix, not the corners.
 
@@ -78,7 +78,7 @@ all dimensions between the first and last dimensions contain ray information.
 For example, if I have a dataset with dimensions 128x30x8 and a trajectory
 with dimensions 128x30 then it is assumed that I have 8 coils and 30 rays.
 If my dataset is 128x30x100x8 and my trajectory is 128x30x100 then the
-GROG interpolator assumes I have 3000 rays and 8 coils.
+GROG interpolator will reshape the data to form 3000 rays and 8 coils.
 ---
 
 With these conventions establishing number of rays and coils, the only thing remaining is to decide what you want the final dimensions of the cartesian data to be. For this example I'll use:
@@ -88,7 +88,7 @@ KSpaceData.cartesianSize = [288, 288, 240, 32];
 ```
 
 Note that it is not necessary for the first two dimensions of the output
-to be square or to correspond to another part of the original dataset!
+to be square or to correspond to another part of the original dataset.
 It is however necessary that the remaining dimensions match.
 
 With the above I can now use the griddata interpolator (for example) like so, assuming

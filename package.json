@@ -9,7 +9,7 @@
     "type": "git",
     "url": "git+https://github.com/edibella/gridder.git"
   },
-  "keywords": ["matlab", "package", "gridding", "MRI", "interpolation"],
+  "keywords": ["matlab", "package", "gridding", "MRI", "interpolation", "nufft", "GROG"],
   "author": "KC Erb <iamkcerb@gmail.com>",
   "license": "MIT",
   "bugs": {
